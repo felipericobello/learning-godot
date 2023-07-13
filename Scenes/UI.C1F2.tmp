@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvlfmiqtgmtuo"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_e5lg7"]
+[ext_resource type="Script" path="res://Scripts/HBContainer.gd" id="2_4gfba"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 750.0
+offset_bottom = 750.0
+script = ExtResource("1_e5lg7")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+offset_right = 62.0
+offset_bottom = 31.0
+text = "Button"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 750.0
+grow_vertical = 0
+script = ExtResource("2_4gfba")
+
+[node name="Button1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "BlackBox"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Button 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+text = "Button 3"
+
+[connection signal="pressed" from="HBoxContainer/Button1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
